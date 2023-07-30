@@ -1,0 +1,96 @@
+MDScreen:
+    name: "signup"
+    MDFloatLayout:
+        md_bg_color: 0,172/255, 238/255, 1
+        Image:
+            size_hint: .45, .45
+            source: "assets/bg_false.png"
+            pos_hint: {'center_x': .5,'center_y': .85}
+        MDLabel:
+            text: "Connexion aux services d'alerte !"
+            pos_hint: {'center_x': .5,'center_y': .7}
+            halign: "center"
+            font_name: "BMontserrat"
+            color: 1,1,1,1
+            font_size: "22sp"
+        MDFloatLayout:
+            size_hint: .75, .085
+            pos_hint: {'center_x': .5,'center_y': .6}
+            canvas:
+                Color:
+                    rgb: 1,1,1,1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [25]
+            TextInput:
+                id: username
+                hint_text: "Noms d'utilisateur"
+                font_name: "BMontserrat"
+                size_hint: 1, None
+                height: self.minimum_height
+                pos_hint: {'center_x': .5,'center_y': .5}
+                cursor_color: 0,0,0,1
+                multiline: False
+                background_color: 1,1,1,0
+                foreground_color: 127/255, 202/255, 248/255, 1
+                padding: 26
+                hint_text_color: 195/255, 195/255, 195/255, 1
+        MDFloatLayout:
+            size_hint: .75, .085
+            pos_hint: {'center_x': .5,'center_y': .5}
+            canvas:
+                Color:
+                    rgb: 1,1,1,1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [25]
+            TextInput:
+                id: password
+                hint_text: "Mot de passe"
+                font_name: "BMontserrat"
+                size_hint: 1, None
+                height: self.minimum_height
+                pos_hint: {'center_x': .5,'center_y': .5}
+                cursor_color: 0,0,0,1
+                multiline: False
+                password: True
+                background_color: 1,1,1,0
+                foreground_color: 127/255, 202/255, 248/255, 1
+                padding: 26
+                hint_text_color: 195/255, 195/255, 195/255, 1
+        Button:
+            text: "Connexion"
+            font_name: "BMontserrat"
+            size_hint: .75, .085
+            pos_hint: {'center_x': .5,'center_y': .30}
+            background_color: 1,1,1,0
+            color: 127/255, 202/255, 248/255, 1
+            # event du clic sur le bouton
+            on_release:
+                # on execute la fx
+                app.login(username.text, password.text)
+            canvas.before:
+                Color:
+                    rgb: 1,1,1,1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [25]
+        MDLabel:
+            text: "Rassurez-vous d'avoir déjà un compte familiale"
+            font_name: "BMontserrat"
+            pos_hint: {"center_y": .17}
+            halign: "center"
+            color: 1,1,1,1
+            font_size: "10sp"
+        MDLabel:
+            text: "U.O.R Designed"
+            font_name: "BMontserrat"
+            pos_hint: {"center_y": .15}
+            halign: "center"
+            color: 1,1,1,1
+            font_size: "8sp"
+
+
