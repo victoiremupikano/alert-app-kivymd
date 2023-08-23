@@ -3,7 +3,7 @@ from py.auth import post_init, get_creds
 # on import la fx qui permet la recuperation des coords gps sur base du numero de telephonme
 from py.gpsdata import get_gpsdata
 
-db = pymysql.connect(host="mysqldb.cyaqvvc9dagv.us-east-1.rds.amazonaws.com", port=3310, user="root", password="root03885", database="security_controller_dev")
+db = pymysql.connect(host="your-host", port=3310, user="your-user", password="your-password", database="your-databae")
 # you have cursor instance here
 cursor = db.cursor()
 
